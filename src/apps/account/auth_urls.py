@@ -1,10 +1,10 @@
 from django.urls import path, reverse_lazy
 from django.contrib.auth import views as auth_views
 
-urlpatterns = [
-    # ALL THE SAME LOGIC IN AUTH URLS
-    # path('', include('django.contrib.auth.urls')),
+# ALL THE SAME LOGIC IN AUTH URLS
+# path('', include('django.contrib.auth.urls')),
 
+urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 

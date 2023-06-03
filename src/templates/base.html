@@ -35,6 +35,21 @@
             </span>
         {% endwith %}
     </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">
+                    {{ message | safe }}
+                    <a href="#" class="close">x</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <script>
+            let message = document.querySelector("ul[class='messages']"),
+                close_object = document.querySelector("a[class='close']")
+            close_object.onclick = () => message.style.display = 'none'
+        </script>
+    {% endif %}
     <div id="content">
         {% block content %}
         {% endblock %}
